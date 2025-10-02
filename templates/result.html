@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('{{ url_for('static', filename='background.jpg') }}') center/cover no-repeat;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        div {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+             /* Align items to the left */
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        p{
+            text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <div>
+        <h1>Result</h1>
+    <p>{{ result }}</p>
+    </div>
+    
+
+    
+
+</body>
+</html>

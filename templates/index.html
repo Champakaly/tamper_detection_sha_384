@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Tampering Detection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('{{ url_for('static', filename='background.jpg') }}') center/cover no-repeat;
+
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+             /* Align items to the left */
+        }
+
+        h1 {
+            color: #000000;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #000000;
+            font-size: 16px;
+            font-weight:500;
+        }
+
+        input {
+            width: calc(100% - 24px); /* Adjusted width to account for padding */
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 2px solid #172f63;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #242a6a;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1d2154;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/check_tampering" method="post" enctype="multipart/form-data">
+        <h1>Image Tampering Detection</h1>
+        <p>Ensure the integrity of your images with our tampering detection tool.</p>
+
+        <label for="original_image">Upload Image 1:</label>
+        <input type="file" id="original_image" name="original_image" accept="image/*" required>
+
+        <label for="tampered_image">Upload Image 2:</label>
+        <input type="file" id="tampered_image" name="tampered_image" accept="image/*" required>
+
+        <button type="submit">Check Tampering</button>
+    </form>
+</body>
+
+</html>
